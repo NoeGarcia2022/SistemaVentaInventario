@@ -1,12 +1,10 @@
 <?php
 class Controller
 {
+    protected $views, $model;
     public function __construct()
     {
-        $views = 'views';
-        #no me deja instanciar la vista con el controlador pero si me 
-        #dejo a la hora de poner una variable en este constructor 
-        $this->$views = new Views();
+        $this->views = new Views();
         $this->cargarModel();
     }
     public function cargarModel()

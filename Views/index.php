@@ -24,17 +24,20 @@
                                     <h3 class="text-center font-weight-light my-4">Iniciar Session</h3>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form id="frmLogin"> <!-- Este id nos servira para hacer peticiones mediante ajax -->
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="inputEmail" type="text" placeholder="Ingrese Usuario" />
-                                            <label for="inputEmail">Usuario</label>
+                                            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingrese Usuario" />
+                                            <label for="usuario">Usuario</label>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="inputPassword" type="password" placeholder="Ingrese su Contraseña" />
-                                            <label for="inputPassword">Contraseña</label>
+                                            <input type="password" class="form-control" id="clave" name="clave" placeholder="Ingrese su Contraseña" />
+                                            <label for="clave">Contraseña</label>
+                                        </div>
+                                        <div class="alert alert-danger text-center d-none" id="alerta" role="alert">
+
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                            <a class="btn btn-primary" href="index.html">Login</a>
+                                            <button class="btn btn-primary" href="submit" onclick="frmLogin(event);">Login</button>
                                         </div>
                                     </form>
                                 </div>
@@ -59,8 +62,14 @@
             </footer>
         </div>
     </div>
+    <script src="<?php echo base_url; ?>Assets/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url; ?>Assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="<?php echo base_url; ?>Assets/js/scripts.js"></script>
+    <script>
+        const base_url = "<?php echo base_url; ?>";
+    </script>
+    <script src="<?php echo base_url; ?>Assets/js/funciones.js"></script>
+
 </body>
 
 </html>
